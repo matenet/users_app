@@ -19,7 +19,7 @@ export function* handleUsersSaveNew(userData) {
     const postToApi = yield call(post, 'https://reqres.in/api/users', userData);
       yield put(setSnackbarValidOpen(snackbarValidOpen))
   } catch (error) {
-    alert("Connection Error");
+    alert("Saga Error");
     // yield put(setError(error.toString()));
   }
 }
