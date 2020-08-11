@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Box from '@material-ui/core/Box'
-import Container from '@material-ui/core/Container'
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-
-import UsersList from './UsersList'
+import UsersList from './userList';
 import { loadUsers } from '../../redux/actions/usersActions';
+import UsersListHeader from "./usersListHeader/UsersListHeader";
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -16,13 +15,15 @@ const Users = () => {
   }, [dispatch]);
 
   return (
-    <Container maxWidth="md">
-      <Box mt={4} clone>
-        <Paper >
-          <Box p={2} clone>
-            <Typography variant='h3'>Users</Typography>
+    <Container maxWidth="lg">
+      <Box my={4} px={2} clone>
+        <Paper square >
+          <Box pt={2} pb={1}>
+            <UsersListHeader/>
           </Box>
-          <UsersList />
+          <Box>
+            <UsersList />
+          </Box>
         </Paper>
       </Box>
     </Container>

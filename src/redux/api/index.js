@@ -42,3 +42,24 @@ export const get = (url, query, token) => {
 
   return req.then(handleSuccess).catch(handleError);
 };
+
+export const post = (url, data, token ) => {
+  console.log(data.data.firstName);
+    const req = axios
+    .post(url,
+        {
+
+                firstName: data.data.firstName,
+                lastName: data.data.lastName,
+                email: data.data.email,
+
+      },
+        token && {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        }
+    );
+
+  return req.then(handleSuccess).catch(handleError);
+};
