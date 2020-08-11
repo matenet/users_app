@@ -9,7 +9,7 @@ const usersReducer = (state = { data: [] }, action) => {
     case USERS.SAVE_NEW:
       return {
         ...state,
-        userData: action.data
+        snackbarValidOpen: true
       }
     case USERS.SET_SNACKBAR_VALID:
       return {

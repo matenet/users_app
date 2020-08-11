@@ -19,8 +19,8 @@ const useStyles = makeStyles(() => ({
 
 const App = () => {
   const classes = useStyles();
-  const snackBarValidOpen = useSelector(state => state.snackbarErrorOpen);
-  const snackbarErrorOpen = useSelector(state => state.snackbarErrorOpen);
+  const snackBarValidOpen = useSelector(state => state.users.snackbarValidOpen);
+  const snackbarErrorOpen = useSelector(state => state.users.snackbarErrorOpen);
   const snackbarValidText = "Thank you - your submission is pending and will appear after validation";
   const snackbarErrorText = "Connection error - please try again later";
 
